@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration-Numbers</title>
+  <link rel="stylesheet" href="css/registration_number.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+  <div class="row">
+    <div class="six columns">
+      <div class="box" id="header-note">
+        <h2> Registration Numbers</h2>
+        
+
+        <div id="displayCount"> <strong>Enter a registration number:</strong>
+       
+        </div>
+        <span> <span class="alert"></span> </span>
+        <br>
+        <div id="textFieldAndBtn">
+          <input type="text" class="registrationNum" name="" value="">
+          <br>
+          <button class="button-primary addBtn" on type="button" name="button">Add</button>
+          <button class="button-primary clearBtn" on type="button" name="button">Clear</button>
+        </div>
+         <br>
+         <br>
+        <div class="filter">
+          <label for="Town: "></label>
+          <select class="DropSelector" name="selectTown">
+            <option class="DropSelector" value="All ">All Towns</option>
+            <option class="DropSelector" value="CA ">CapeTown</option>
+            <option class="DropSelector" value="CJ ">Paarl</option>
+            <option class="DropSelector" value="CY ">Bellville</option>
+            <option class="DropSelector" value="CAW ">George</option>
+            <option class="DropSelector" value="CL ">Worcester</option>
+            <option class="DropSelector" value="PA ">Pretoria</option>
+          </select>
+        </div>
+
+        <div class="numberDisplay">
+
+        </div>
+      </div>
+    </div>
+</body>
+
+<script src="./js/registration-numbers.js" charset="utf-8"></script>
+<script src="./js/registration-numbers-dom.js" charset="utf-8"></script>
+
+
+</html>
