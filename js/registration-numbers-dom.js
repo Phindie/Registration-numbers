@@ -36,7 +36,7 @@ addBtnElem.addEventListener('click', function(){
 clearButton.addEventListener('click', function(){
   localStorage.removeItem('numberOfReg');
   // document.querySelector('.alert').innerHTML = '';
-  
+
   window.location.reload();
 })
 

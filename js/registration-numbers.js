@@ -31,16 +31,15 @@ function FactoryNum(stored){
   function townFilter(town){
 
     var carNumbers = Object.keys(townMap);
-
+     if (town === "All ") {
+      return carNumbers;
+    }
     if (town === "Filter ") {
       var nothing = carNumbers.clear();
 
       return nothing;
     }
 
-    if (town === "All ") {
-      return carNumbers;
-    }
     var filterTown = carNumbers.filter(function(Number, storedNum){
 
       return Number.startsWith(town)
@@ -50,13 +49,13 @@ function FactoryNum(stored){
     return filterTown;
   }
 
-  
+
 
   return {
     addedNumbers,
     returningReg,
     townFilter,
     mapRegistry,
-    
+
   }
 }
