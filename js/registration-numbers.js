@@ -1,12 +1,15 @@
-function FactoryNum(stored){
+function RegFactory(stored){
   var regNumber = '';
   var townMap = {};
 
 
   function addedNumbers(reg){
-    var availableReg = [ 'CA ', 'CJ ', 'CY ', 'CL', 'CAW', 'PA ']
+    if (stored) {
+      townMap = stored
+    }
+    var availableReg = [ 'CA ', 'CJ ', 'CY ', 'CL', 'CAW']
 
-    if (reg != ''){
+    if (reg !== ''){
       if (townMap[reg] === undefined) {
         for (var i = 0; i < availableReg.length; i++) {
           if (reg.startsWith(availableReg[i])) {
@@ -29,15 +32,15 @@ function FactoryNum(stored){
 
 
   function townFilter(town){
-
     var carNumbers = Object.keys(townMap);
-     if (town === "All ") {
-      return carNumbers;
-    }
-    if (town === "Filter ") {
-      var nothing = carNumbers.clear();
 
-      return nothing;
+      if (town === "All ") {
+      return carNumbers;
+     }
+
+      if (town === "Filter ") {
+     var empty = carNumbers.clear();
+       return empty;
     }
 
     var filterTown = carNumbers.filter(function(Number, storedNum){
@@ -49,9 +52,7 @@ function FactoryNum(stored){
     return filterTown;
   }
 
-
-
-  return {
+ return {
     addedNumbers,
     returningReg,
     townFilter,

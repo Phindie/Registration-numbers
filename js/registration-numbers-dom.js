@@ -7,7 +7,7 @@ var displayElem = document.querySelector('.numberDisplay');
 
 
 var storage = localStorage.getItem("numberOfReg") ? JSON.parse(localStorage.getItem("numberOfReg")) : {};
-var callFactory = FactoryNum(storage);
+var callFactory = RegFactory(storage);
 
 function createReg(registration){
   let createList = document.createElement('li');
@@ -31,6 +31,7 @@ function displayRegistration(){
 
 addBtnElem.addEventListener('click', function(){
   displayRegistration();
+  registrationElem.value = '';
 });
 
 clearButton.addEventListener('click', function(){
