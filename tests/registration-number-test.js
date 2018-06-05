@@ -37,15 +37,10 @@ assert.equal(selectPlate.addedNumbers('CAA 125 123'), false);
 it('should map registrations from the given regnumbers only', function(){
 var selectPlate = RegFactory();
 
-selectPlate.addedNumbers("CA 437 22");
-selectPlate.addedNumbers("LN 253 7754");
-
-assert.deepEqual(selectPlate.mapRegistry(), ['CA 437 22'])
-var selectPlate = RegFactory();
-
 selectPlate.addedNumbers("CY 156 234");
 selectPlate.addedNumbers("CK 124 873");
 selectPlate.addedNumbers("CJ 432 23");
+selectPlate.addedNumbers("LN 253 7754");
 
 assert.deepEqual(selectPlate .mapRegistry(), ["CY 156 234","CJ 432 23"])
 });
