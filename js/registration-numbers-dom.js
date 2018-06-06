@@ -6,8 +6,11 @@ var displayElem = document.querySelector('.numberDisplay');
 
 
 
-var storage = localStorage.getItem("numberOfReg") ? JSON.parse(localStorage.getItem("numberOfReg")) : {};
-var callFactory = RegFactory(storage);
+var goGet = localStorage.getItem("numberOfReg");
+var stored = goGet ? JSON.parse(goGet) : {};
+
+
+var callFactory = RegFactory(stored);
 
 function createReg(registration){
   let createList = document.createElement('li');
@@ -20,8 +23,8 @@ function displayRegistration(){
   registrationElem.value = '';
 
   if (callFactory.addedNumbers(inputValue)) {
-    document.querySelector('.alert').innerHTML = '';
-    localStorage.setItem('numberOfReg', JSON.stringify(callFactory.mapRegistry()));
+    // document.querySelector('.alert').innerHTML = '';
+     localStorage.setItem('numberOfReg', JSON.stringify(callFactory.mapRegistry()));
     createReg(inputValue);
   }
   else {
@@ -36,6 +39,8 @@ addBtnElem.addEventListener('click', function(){
 
 clearButton.addEventListener('click', function(){
   localStorage.removeItem('numberOfReg');
+  location.reload();
+
   // document.querySelector('.alert').innerHTML = '';
 
   window.location.reload();

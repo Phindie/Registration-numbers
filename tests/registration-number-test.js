@@ -61,7 +61,7 @@ var selectPlate = RegFactory();
 
 selectPlate.addedNumbers("CA 754 342");
 selectPlate.addedNumbers("CA 6734");
-selectPlate.addedNumbers("CY 2659");
-assert.deepEqual(selectPlate.townFilter('CA'), ['CA 754 342','CA 6734'])
+selectPlate.addedNumbers("CAW 2659");
+assert.deepEqual(selectPlate.townFilter('CA'), ['CA 754 342','CA 6734','CAW 2659'])
 });
 });
