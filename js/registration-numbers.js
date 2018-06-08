@@ -1,17 +1,16 @@
 function RegFactory(stored){
   var regNumber = '';
-  var townMap = {};
+  var townMap = stored || {};
 
 
   function addedNumbers(reg){
-
-    var availableReg = [ 'CA ', 'CJ ', 'CY ', 'CL', 'CAW']
+   var availableReg = [ 'CA ', 'CJ', 'CY', 'CL','CAW']
 
     if (reg !== ''){
       if (townMap[reg] === undefined) {
         for (var i = 0; i < availableReg.length; i++) {
           if (reg.startsWith(availableReg[i])) {
-
+            // CA 8723: 0
             townMap[reg] = 0;
             return true;
           }
@@ -24,30 +23,27 @@ function RegFactory(stored){
   function returningReg(){
     return regNumber;
   }
-  function mapRegistry() {
-    return Object.keys(townMap);
-  }
-
-
-  function townFilter(town){
+    function townFilter(town){
     var carNumbers = Object.keys(townMap);
 
+    if (town === "Filter ") {
+   var empty = carNumbers.clear();
+     return empty;
+  }
       if (town === "All ") {
       return carNumbers;
      }
 
-      if (town === "Filter ") {
-     var empty = carNumbers.clear();
-       return empty;
-    }
-
-    var filterTown = carNumbers.filter(function(Number, storedNum){
+  var filterTown = carNumbers.filter(function(Number, storedNum){
 
       return Number.startsWith(town)
     });
     location.hash = town;
 
     return filterTown;
+  }
+  function mapRegistry() {
+    return townMap;
   }
 
  return {
