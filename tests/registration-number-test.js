@@ -26,7 +26,7 @@ assert.equal(selectPlate.addedNumbers('CJ 125 567'), true);
 it('should return true if registration matches the given regnumber for Worcester', function(){
 var selectPlate = RegFactory();
 
-assert.equal(selectPlate.addedNumbers('CL 125 34'), true);
+assert.equal(selectPlate.addedNumbers('CW 125 34'), true);
 });
 
 it('should return false if the registration does not match the given regnumber', function(){
@@ -53,5 +53,12 @@ selectPlate.addedNumbers("CA 754 342");
 selectPlate.addedNumbers("CA 6734");
 selectPlate.addedNumbers("CAW 2659");
 assert.deepEqual(selectPlate.townFilter('CA '), ['CA 754 342','CA 6734'])
+});
+it('should take stored map and return it', function(){
+var storage = {'CA 6734':0, 'CAW 2659':0,'CW 7653':0 }
+var  selectPlate = RegFactory(storage);
+// selectPlate.addedNumbers("CA 6734");
+// selectPlate.addedNumbers("CAW 2659");
+assert.deepEqual(selectPlate.mapRegistry(), {'CA 6734':0, 'CAW 2659':0,'CW 7653':0 })
 });
 });

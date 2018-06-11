@@ -4,7 +4,7 @@ function RegFactory(stored){
 
 
   function addedNumbers(reg){
-   var availableReg = [ 'CA ', 'CJ', 'CY', 'CL','CAW']
+   var availableReg = [ 'CA ', 'CJ', 'CY', 'CW','CAW']
 
     if (reg !== ''){
       if (townMap[reg] === undefined) {

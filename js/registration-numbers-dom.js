@@ -20,21 +20,22 @@ function displayRegistration(){
   registrationElem.value = '';
    console.log(inputValue);
 
-   if (callFactory.addedNumbers(inputValue)) {
-       document.querySelector('.alert').innerHTML = '';
-       localStorage.setItem('numberOfReg', JSON.stringify(callFactory.mapRegistry()));
-       createReg(inputValue);
- }
+
    var cars = /[a-zA-Z0-9]+$/;
   if(!inputValue.match(cars) && inputValue !== ""){
     if(collectReg[inputValue] === undefined){
       collectReg[inputValue] = 0;
      }
-
+}
+if (callFactory.addedNumbers(inputValue)) {
+    document.querySelector('.alert').innerHTML = '';
+    localStorage.setItem('numberOfReg', JSON.stringify(callFactory.mapRegistry()));
+    createReg(inputValue);
+}
       else {
-        document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY,CL, & CJ'.'CAW'"
+        document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY,CW, & CJ'.'CAW'"
       }
-    }
+
 }
 
 addBtnElem.addEventListener('click', function(){
