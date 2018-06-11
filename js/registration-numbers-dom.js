@@ -32,14 +32,10 @@ function displayRegistration(){
      }
 
       else {
-        document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY,CL, & CJ'. "
+        document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY,CL, & CJ'.'CAW'"
       }
     }
 }
-
-
-
-
 
 addBtnElem.addEventListener('click', function(){
   displayRegistration();
