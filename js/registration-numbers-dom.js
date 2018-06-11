@@ -68,6 +68,7 @@ displayElem.innerHTML = '';
     document.querySelector('.alert').innerHTML = '';
   }
 
+
 });
 
 registrationElem.addEventListener('click', function(){

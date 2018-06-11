@@ -57,8 +57,7 @@ assert.deepEqual(selectPlate.townFilter('CA '), ['CA 754 342','CA 6734'])
 it('should take stored map and return it', function(){
 var storage = {'CA 6734':0, 'CAW 2659':0,'CW 7653':0 }
 var  selectPlate = RegFactory(storage);
-// selectPlate.addedNumbers("CA 6734");
-// selectPlate.addedNumbers("CAW 2659");
+
 assert.deepEqual(selectPlate.mapRegistry(), {'CA 6734':0, 'CAW 2659':0,'CW 7653':0 })
 });
 });
