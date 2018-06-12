@@ -3,7 +3,7 @@ var addBtnElem = document.querySelector('.addBtn');
 var clearButton = document.querySelector('.clearBtn');
 var townSelect = document.querySelector('.DropSelector');
 var displayElem = document.querySelector('.numberDisplay');
-var errorMsgElem = document.querySelector('.errorMsg');
+
 
 var stored = localStorage.getItem("numberOfReg") ? JSON.parse(localStorage.getItem("numberOfReg")) : {};
 var callFactory = RegFactory(stored);
@@ -36,18 +36,17 @@ if (callFactory.addedNumbers(inputValue)) {
     createReg(inputValue);
 }
       else {
-        document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY, CW, CJ & CAW'."
-      }
+        let foundReg = Object.keys(callFactory.mapRegistry());
 
+         foundReg.indexOf(inputValue) !=-1 ?   document.querySelector('.alert').innerHTML = "Registration number already exist"   :  document.querySelector('.alert').innerHTML = "Please enter a valid registration <br> <code> Only from: 'CA, CY, CW, CJ & CAW'."
+
+      }
 
 }
 
 addBtnElem.addEventListener('click', function(){
   displayRegistration();
   // registrationElem.value = '';
-  else (inputValue == null || inputValue == ""){
-      errorMsgElem.innerHTML = 'Sorry dublicated registration number! <br> <code> Add Registration ';
-    }
 });
 
 clearButton.addEventListener('click', function(){
@@ -62,8 +61,6 @@ window.addEventListener('load', function(){
  for (var i = 0; i < loadMap.length; i++) {
     createReg(loadMap[i])
   }
-
-
 });
 
 townSelect.addEventListener('change', function(){
@@ -75,12 +72,11 @@ displayElem.innerHTML = '';
       createReg(selectValue[i]);
     }
     document.querySelector('.alert').innerHTML = '';
-
   }
+
 
 });
 
 registrationElem.addEventListener('click', function(){
   document.querySelector('.alert').innerHTML = '';
-
 });
