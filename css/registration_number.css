@@ -37,6 +37,7 @@ h2 {
   width: 90px;
   height: 40px;
   margin-left: 10px;
+
 }
 
 .DropSelector {
@@ -44,13 +45,17 @@ h2 {
   color: white;
   width: 150px;
   height: 40px;
-  text-align: center;
+  text-align: 100%;
 }
 
 
-#alertID {
-  width: 10%
+.alert {
+  width: 100%;
   color: red;
+}
+
+#alertID {
+  width: 50%
 }
 
 
@@ -65,7 +70,7 @@ h2 {
 
 } */
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:400px) {
   /* For mobile phones: */
   .menu, .main, .right {
     width: 100%;
